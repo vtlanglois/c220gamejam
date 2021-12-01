@@ -7,6 +7,7 @@
 transform = Transform( 1, -0.000545902, 0.000136479, 0.000545829, 1, 0.000522631, -0.000136767, -0.000522556, 1, 0, 0, 0 )
 
 [node name="Road" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 3.37188e-10, -8.73115e-11, -1.05516e-11, 1, 0, 0, 3.49246e-10, 1, 0.00500616, 0.0191278, -36.6043 )
 
 [node name="Car" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.364073, 6.67081 )

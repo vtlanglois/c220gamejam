@@ -2,7 +2,7 @@ extends Node
 
 
 export  var carSpeed = 1.0
-
+export var carLimits = 3;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

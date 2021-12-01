@@ -14,3 +14,10 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	translation.z += Global.carSpeed;
+
+
+
+
+
+func _on_Area_area_entered(area):
+	print("hey!")
