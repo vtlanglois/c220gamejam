@@ -1,7 +1,7 @@
 extends Spatial
 
 
-
+var moveSpeed = 10;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,7 +11,9 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if (Input.is_action_pressed("left")):
-		translation.x -= 0.25;
+		translation.x -= moveSpeed * delta;
 	if (Input.is_action_pressed("right")):
-		translation.x += 0.25;
+		translation.x += moveSpeed * delta;
+	if (translation.x <= -Global.carLimits): translation.x = -Global.carLimits
+	if (translation.x >= Global.carLimits): translation.x = Global.carLimits
 		
