@@ -13,4 +13,4 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	translation.z += Global.carSpeed;
+	translation.z += Global.carSpeed * delta;
