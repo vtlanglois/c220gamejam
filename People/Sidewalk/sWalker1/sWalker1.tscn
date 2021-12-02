@@ -1,9 +1,13 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Assets/Guy/guy1.png" type="Texture" id=1]
-[ext_resource path="res://People/Sidewalk/sWalker.gd" type="Script" id=2]
+[ext_resource path="res://People/Sidewalk/sWalker.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Guy/guy1.png" type="Texture" id=2]
 
-[sub_resource type="ArrayMesh" id=1]
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.297875
+height = 0.333846
+
+[sub_resource type="ArrayMesh" id=2]
 resource_name = "Cube002"
 surfaces/0 = {
 "aabb": AABB( -0.210266, -0.00363795, -0.0576713, 0.420532, 0.498701, 0.115343 ),
@@ -17,7 +21,7 @@ surfaces/0 = {
 "vertex_count": 733
 }
 
-[sub_resource type="Skin" id=2]
+[sub_resource type="Skin" id=3]
 resource_name = "Skin"
 bind_count = 17
 bind/0/name = "spine"
@@ -72,12 +76,11 @@ bind/16/name = "shin.R"
 bind/16/bone = -1
 bind/16/pose = Transform( 4.22763, 0.0141703, -0.00944722, 0.0143333, -4.22699, 0.0735916, -0.00920009, -0.0736215, -4.22701, 0.193254, 0.491745, 0.00286988 )
 
-[sub_resource type="SpatialMaterial" id=3]
-albedo_texture = ExtResource( 1 )
-
-[sub_resource type="CapsuleShape" id=4]
+[sub_resource type="SpatialMaterial" id=4]
+albedo_texture = ExtResource( 2 )
 
 [sub_resource type="Animation" id=5]
+resource_name = "Fall"
 length = 0.5
 loop = true
 tracks/0/type = "transform"
@@ -201,6 +204,7 @@ tracks/16/enabled = true
 tracks/16/keys = PoolRealArray( 0.5, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1 )
 
 [sub_resource type="Animation" id=6]
+resource_name = "Walk"
 length = 0.9
 loop = true
 tracks/0/type = "transform"
@@ -323,12 +327,18 @@ tracks/16/imported = true
 tracks/16/enabled = true
 tracks/16/keys = PoolRealArray( 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1.66667, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1 )
 
-[node name="sWalker" type="Spatial"]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
-script = ExtResource( 2 )
+[node name="sWalker1" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="Area" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.56731, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+transform = Transform( 0.720535, 0, 0, 0, 1.47851, 0, 0, 0, 0.55163, 0, -1.126, 0 )
+shape = SubResource( 1 )
 
 [node name="metarig" type="Spatial" parent="."]
-transform = Transform( 0.236538, 0, 0, 0, 0.236538, 0, 0, 0, 0.236538, 0, 0, 0 )
+transform = Transform( 0.425, 0, 0, 0, 0.425, 0, 0, 0, 0.425, 0, 0, 0 )
 
 [node name="Skeleton" type="Skeleton" parent="metarig"]
 bones/0/name = "spine"
@@ -418,18 +428,12 @@ bones/16/enabled = true
 bones/16/bound_children = [  ]
 
 [node name="Cube002" type="MeshInstance" parent="metarig/Skeleton"]
-mesh = SubResource( 1 )
-skin = SubResource( 2 )
-material/0 = SubResource( 3 )
-
-[node name="Area" type="Area" parent="metarig"]
-
-[node name="CollisionShape" type="CollisionShape" parent="metarig/Area"]
-transform = Transform( 0.621179, 0, 0, 0, -3.49223e-08, -0.798929, 0, 0.647927, -2.83218e-08, 0, 1.03966, 0 )
-shape = SubResource( 4 )
+mesh = SubResource( 2 )
+skin = SubResource( 3 )
+material/0 = SubResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Fall = SubResource( 5 )
 anims/Walk = SubResource( 6 )
 
-[connection signal="body_entered" from="metarig/Area" to="." method="_on_Area_body_entered"]
+[connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
