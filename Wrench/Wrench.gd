@@ -1,6 +1,6 @@
 extends Spatial
 
-var speedDecrease = 1
+var speedDecrease = 5
 
 var angle : float = PI
 onready var rotation_target = get_node("/root/Game/PivotPoint")
@@ -11,7 +11,7 @@ func _ready():
 	$AnimationPlayer2.play("Spin")
 
 func _physics_process(delta):
-	angle += Global.carSpeed * delta * .025
+	angle += (Global.carSpeed+Global.constantSpeed) * delta * .025
 	
 	var angle_vector = Vector2(cos(angle), sin(angle))
 	global_transform.origin = rotation_target.global_transform.origin
@@ -24,4 +24,5 @@ func _on_Area_body_entered(body):
 	Global.totalWrenches += 1
 	Global.carSpeed -= speedDecrease
 	Global.currentItems -= 1
+	Global.score += 5
 	queue_free()
