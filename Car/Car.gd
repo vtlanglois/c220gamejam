@@ -16,4 +16,3 @@ func _process(delta):
 		translation.x += moveSpeed * delta;
 	if (translation.x <= -Global.carLimits): translation.x = -Global.carLimits
 	if (translation.x >= Global.carLimits): translation.x = Global.carLimits
-		

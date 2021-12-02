@@ -1,6 +1,6 @@
 extends Spatial
 
-var speedDecrease = 50
+var speedDecrease = 10
 
 func _physics_process(delta):
 	translation.z += Global.carSpeed * delta;
