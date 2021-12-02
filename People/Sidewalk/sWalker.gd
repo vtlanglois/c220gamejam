@@ -1,6 +1,6 @@
 extends Spatial
 
-var scoreValue = 10;
+var speedDecrease = 5
 
 var angle : float = PI
 onready var rotation_target = get_node("/root/Game/PivotPoint")
@@ -9,9 +9,10 @@ const DISTANCE_FROM_TARGET = 150.1
 #rotation code: https://godotforums.org/discussion/27319/how-to-rotate-one-spatial-around-another-spatial
 
 func _ready():
-	pass
+	$AnimationPlayer.play("Walk")
 
 func _process(delta):
+
 	angle += Global.carSpeed * delta * .025
 	
 	var angle_vector = Vector2(cos(angle), sin(angle))
@@ -20,6 +21,9 @@ func _process(delta):
 	global_transform.origin.z -= angle_vector.x * DISTANCE_FROM_TARGET
 	global_transform.origin.y += angle_vector.y * DISTANCE_FROM_TARGET
 
+	$AnimationPlayer.play("Walk")
+
 func _on_Area_body_entered(body):
-	Global.score += scoreValue
+	Global.carSpeed -= speedDecrease
+	Global.totalPeopleHit += 1
 	queue_free()
