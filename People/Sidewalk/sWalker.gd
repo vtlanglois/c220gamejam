@@ -4,7 +4,7 @@ var speedDecrease = 5
 
 var angle : float = PI
 onready var rotation_target = get_node("/root/Game/PivotPoint")
-const DISTANCE_FROM_TARGET = 150.1
+const DISTANCE_FROM_TARGET = 150.025
 
 #rotation code: https://godotforums.org/discussion/27319/how-to-rotate-one-spatial-around-another-spatial
 
