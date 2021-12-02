@@ -1,10 +1,11 @@
 extends Spatial
 
-var speedDecrease = 5
+var speedDecrease = 1
 
-var angle : float = PI
+var angle : float = 0
 onready var rotation_target = get_node("/root/Game/PivotPoint")
 const DISTANCE_FROM_TARGET = 150.025
+var x = rand_range(-2,2)
 
 #rotation code: https://godotforums.org/discussion/27319/how-to-rotate-one-spatial-around-another-spatial
 
@@ -18,6 +19,7 @@ func _process(delta):
 	var angle_vector = Vector2(cos(angle), sin(angle))
 	global_transform.origin = rotation_target.global_transform.origin
 	
+	global_transform.origin.x = x
 	global_transform.origin.z -= angle_vector.x * DISTANCE_FROM_TARGET
 	global_transform.origin.y += angle_vector.y * DISTANCE_FROM_TARGET
 
