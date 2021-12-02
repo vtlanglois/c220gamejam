@@ -47,10 +47,10 @@ far = 76.2
 [node name="motion_blur" parent="Camera" instance=ExtResource( 7 )]
 
 [node name="sWalker1" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 1.21019e-09, -3.0559e-10, -1.05516e-11, 1, 0, 0, 1.22236e-09, 1, 0.00329398, 0.0125858, -24.0851 )
+transform = Transform( 1, 1.55939e-09, -3.92902e-10, -1.05516e-11, 1, 0, 0, 1.57161e-09, 1, 2.0168, 0.656389, -21.4999 )
 
 [node name="Wrench" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 7.44592e-10, -1.89175e-10, -1.05516e-11, 1, 0, 0, 7.567e-10, 1, -1.60256, 1.13505, -21.3915 )
+transform = Transform( 1, 8.02771e-10, -2.03727e-10, -1.05516e-11, 1, 0, 0, 8.14907e-10, 1, -1.60256, 1.13505, -21.3915 )
 
 [node name="Menu" parent="." instance=ExtResource( 5 )]
 pause_mode = 2
