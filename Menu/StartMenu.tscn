@@ -1,19 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Menu/StartMenu.gd" type="Script" id=1]
-
-[sub_resource type="PlaneMesh" id=1]
-
-[sub_resource type="CapsuleMesh" id=2]
-radius = 0.025
-mid_height = 0.25
+[ext_resource path="res://Assets/Car/CarModelr.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Guy/guy1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Tile/tile0.tscn" type="PackedScene" id=4]
 
 [node name="StartMenu" type="Spatial"]
 script = ExtResource( 1 )
 
-[node name="MeshInstance" type="MeshInstance" parent="."]
-mesh = SubResource( 1 )
-material/0 = null
+[node name="CarModel" parent="." instance=ExtResource( 2 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.605959, -5.31611 )
 
 [node name="Control" type="Control" parent="."]
 margin_right = 40.0
@@ -49,25 +45,29 @@ margin_top = 312.46
 margin_right = 590.254
 margin_bottom = 360.46
 text = "Quit!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.969304, 0.245866, 0, -0.245866, 0.969304, 0, 0.741451, 1.6709 )
+transform = Transform( 0.91378, -0.0998733, 0.393741, 0, 0.969304, 0.245866, -0.40621, -0.224667, 0.88573, 2.5749, 2.00513, 2.64498 )
 current = true
 fov = 28.5
 
-[node name="CSGBox" type="CSGBox" parent="."]
-transform = Transform( -0.631475, 0, 0.775397, 0, 1, 0, -0.775397, 0, -0.631475, -0.286656, 0.0826597, -0.331139 )
-width = 0.299
-height = 0.175
-depth = 0.229
+[node name="tile0" parent="." instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )
 
-[node name="CSGMesh" type="CSGMesh" parent="."]
-transform = Transform( 1, 0, 0, 0, -0.362503, -0.931983, 0, 0.931983, -0.362503, -0.0991545, 0.225868, 0 )
-mesh = SubResource( 2 )
+[node name="guy1" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1.40929, 0, -1.41912, 0, 2, 0, 1.41912, 0, 1.40929, -1.11745, 0, -1.46688 )
 
-[node name="CSGMesh2" type="CSGMesh" parent="."]
-transform = Transform( 1, 0, 0, 0, -0.737183, 0.675693, 0, -0.675693, -0.737183, 0.0532053, 0.260076, -0.21118 )
-mesh = SubResource( 2 )
+[node name="guy3" parent="." instance=ExtResource( 3 )]
+transform = Transform( -1.71235, 0, 1.03337, 0, 2, 0, -1.03337, 0, -1.71235, 1.21482, 0, -1.7855 )
+
+[node name="guy4" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1.30927, 0, 1.51189, 0, 2, 0, -1.51189, 0, 1.30927, 1.21482, 0, -0.130907 )
+
+[node name="guy2" parent="." instance=ExtResource( 3 )]
+transform = Transform( -0.876523, 0, 1.7977, 0, 2, 0, -1.7977, 0, -0.876523, 0.887799, 0, -0.915789 )
 
 [connection signal="pressed" from="Control/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Control/Button2" to="." method="_on_Button2_pressed"]

@@ -11,7 +11,7 @@ transform = Transform( 1, -0.000545902, 0.000136479, 0.000545829, 1, 0.000522631
 [node name="Road" parent="." instance=ExtResource( 1 )]
 
 [node name="Car" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 1.04386e-10, -2.91038e-11, -1.05516e-11, 1, 0, 0, 1.16415e-10, 1, 0.042638, 0.577473, 6.65691 )
+transform = Transform( 1, 1.62579e-10, -4.36557e-11, -1.05516e-11, 1, 0, 0, 1.74623e-10, 1, 0.042638, 0.577473, 6.65691 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 1.67539e-05, 0.000143949, -5.29607e-05, 0.966837, 0.255395, -0.000134894, -0.255395, 0.966837, -0.00401185, 2.0572, 9.80145 )
