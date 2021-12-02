@@ -18,5 +18,8 @@ transform = Transform( 1, 1.67539e-05, 0.000143949, -5.29607e-05, 0.966837, 0.25
 current = true
 far = 76.2
 
+[node name="sWalker1" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 6.86391e-10, -1.74623e-10, -1.05516e-11, 1, 0, 0, 6.98492e-10, 1, 0.00629692, 0.0240596, -46.0421 )
+
 [node name="Wrench" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 3.37188e-10, -8.73115e-11, -1.05516e-11, 1, 0, 0, 3.49246e-10, 1, -1.60256, 1.13505, -21.3915 )
