@@ -5,7 +5,8 @@ extends Node
 export  var carSpeed = 10.0
 export var score = 0;
 export var time = 0;
-export var carLimits = 3
+export var carLimits = 2.5
+export var morality = 0
 
 
 # Called when the node enters the scene tree for the first time.
