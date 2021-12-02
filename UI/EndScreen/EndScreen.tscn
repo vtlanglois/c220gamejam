@@ -62,7 +62,7 @@ __meta__ = {
 margin_left = 186.119
 margin_top = 206.914
 margin_right = 750.119
-margin_bottom = 334.914
+margin_bottom = 395.914
 custom_fonts/font = SubResource( 1 )
 text = "Score: NULL
 Time: NULL

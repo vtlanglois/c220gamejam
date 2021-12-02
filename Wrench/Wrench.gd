@@ -1,13 +1,14 @@
 extends Spatial
 
-var speedDecrease = 4
+var speedDecrease = 5
 
 func _ready():
-	get_node_or_null("/root/Game/Wrench/Area/AnimationPlayer").play("Spin")
+	$AnimationPlayer2.play("Spin")
 
 func _physics_process(delta):
 	translation.z += Global.carSpeed * delta;
 
 func _on_Area_body_entered(body):
+	Global.totalWrenches += 1
 	Global.carSpeed -= speedDecrease
 	queue_free()
