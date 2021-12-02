@@ -48,7 +48,6 @@ current = true
 far = 76.2
 
 [node name="Menu" parent="." instance=ExtResource( 5 )]
-pause_mode = 2
 visible = false
 
 [node name="HUD" parent="." instance=ExtResource( 8 )]
