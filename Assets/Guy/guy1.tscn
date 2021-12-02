@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Assets/Guy/guy3.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Guy/guy1.png" type="Texture" id=1]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "Cube002"
