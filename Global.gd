@@ -6,6 +6,8 @@ export  var carSpeed = 10.0
 export var score = 0;
 export var time = 0;
 export var carLimits = 3
+export var totalPeopleHit = 0;
+export var totalWrenches = 0;
 
 
 # Called when the node enters the scene tree for the first time.
@@ -15,7 +17,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if(carSpeed <= 0): 
+		get_tree().change_scene("res://UI/EndScreen/EndScreen.tscn")
 
 func _unhandled_input(event):
 	if event.is_action_pressed("menu"):
