@@ -8,8 +8,13 @@ size = Vector2( 10, 100 )
 [node name="Road" type="Spatial"]
 script = ExtResource( 1 )
 
+<<<<<<< Updated upstream
 [node name="CSGMesh" type="CSGMesh" parent="."]
 mesh = SubResource( 1 )
 
 [node name="CSGCylinder" type="CSGCylinder" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10.4993 )
+=======
+[node name="roadtorus" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 150, 0 )
+>>>>>>> Stashed changes
