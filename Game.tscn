@@ -1,13 +1,7 @@
-
-[ext_resource path="res://Road/Road.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Car/Car.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/SFX/8bit Bossa.mp3" type="AudioStream" id=3]
-
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Road/Road.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Car/Car.tscn" type="PackedScene" id=2]
-
 [ext_resource path="res://PauseMenu/Menu.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/World/wide_street_02_2k.exr" type="Texture" id=6]
 [ext_resource path="res://Item Management/Spawn.gd" type="Script" id=7]
@@ -68,11 +62,6 @@ script = ExtResource( 7 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 1.55952e-09, 2.73576e-09, -1.05658e-11, 1, -7.567e-10, 0, 3.49246e-10, 1, 6.06917e-05, 1.17351, 4.2492 )
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 3 )
-volume_db = 3.664
-autoplay = true
 
 [node name="Menu" parent="." instance=ExtResource( 5 )]
 visible = false

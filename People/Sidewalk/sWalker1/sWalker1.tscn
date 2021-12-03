@@ -1,15 +1,7 @@
-
-[gd_scene load_steps=10 format=2]
-
-[ext_resource path="res://People/Sidewalk/sWalker.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Guy/guy1.png" type="Texture" id=2]
-[ext_resource path="res://Assets/SFX/lego-yoda-death-sound-effect.mp3" type="AudioStream" id=3]
-
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://People/Sidewalk/sWalker.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Guy/guy1.png" type="Texture" id=2]
-
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "Cube002"
@@ -24,7 +16,6 @@ surfaces/0 = {
 "skeleton_aabb": [ AABB( -0.0440952, 0.132917, -0.0373899, 0.0876408, 0.0912, 0.0794495 ), AABB( -0.0565852, 0.155762, -0.036107, 0.114963, 0.157021, 0.0685208 ), AABB( -0.0815378, 0.1885, -0.0362591, 0.163052, 0.167694, 0.0773435 ), AABB( -0.0518717, 0.275899, -0.0418753, 0.103743, 0.127155, 0.0837506 ), AABB( -0.0576713, 0.356176, -0.0576713, 0.115343, 0.138887, 0.115343 ), AABB( -0.0028211, 0.263924, -0.0362591, 0.143615, 0.139129, 0.0773435 ), AABB( 0.0343483, 0.302431, -0.0348764, 0.139046, 0.100622, 0.0753999 ), AABB( 0.0663029, 0.319431, -0.0177938, 0.143963, 0.0631721, 0.0420782 ), AABB( -0.140793, 0.239232, -0.0362591, 0.185976, 0.163822, 0.0773435 ), AABB( -0.173395, 0.301829, -0.0343483, 0.17197, 0.101225, 0.0731389 ), AABB( -0.210266, 0.319029, -0.0177939, 0.143861, 0.0635736, 0.0414829 ), AABB( -0.021577, 0.13322, -0.0191156, 0.0890336, 0.181449, 0.0611752 ), AABB( -0.067754, 0.132834, -0.036107, 0.0887652, 0.181476, 0.0781666 ), AABB( -0.0223295, 0.0489484, -0.0347916, 0.0897861, 0.188479, 0.0768512 ), AABB( 0.0204187, -0.00363795, -0.0347916, 0.0470378, 0.160978, 0.0709796 ), AABB( -0.067754, 0.0489482, -0.0373899, 0.0894373, 0.187362, 0.0780998 ), AABB( -0.067754, -0.00363795, -0.0347934, 0.04733, 0.160564, 0.0691601 ) ],
 "vertex_count": 733
 }
-
 
 [sub_resource type="Skin" id=2]
 resource_name = "Skin"
@@ -88,11 +79,7 @@ albedo_texture = ExtResource( 2 )
 radius = 0.499915
 
 [sub_resource type="Animation" id=5]
-
-length = 0.5
-loop = true
-
-
+length = 0.53
 tracks/0/type = "transform"
 tracks/0/path = NodePath("metarig/Skeleton:spine.004")
 tracks/0/interp = 1
@@ -212,7 +199,6 @@ tracks/16/loop_wrap = true
 tracks/16/imported = true
 tracks/16/enabled = true
 tracks/16/keys = PoolRealArray( 0.5, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1 )
-
 tracks/17/type = "value"
 tracks/17/path = NodePath("metarig:translation")
 tracks/17/interp = 1
@@ -225,7 +211,6 @@ tracks/17/keys = {
 "update": 0,
 "values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0.635, 0 ), Vector3( 0, -0.939, 0 ) ]
 }
-
 
 [sub_resource type="Animation" id=6]
 length = 0.9
@@ -350,7 +335,6 @@ tracks/16/imported = true
 tracks/16/enabled = true
 tracks/16/keys = PoolRealArray( 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1.66667, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1 )
 
-
 [node name="sWalker1" type="Spatial"]
 script = ExtResource( 1 )
 
@@ -458,12 +442,6 @@ shape = SubResource( 4 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Fall = SubResource( 5 )
 anims/Walk = SubResource( 6 )
-
-
-stream = ExtResource( 3 )
-
-[connection signal="body_entered" from="metarig/Area" to="." method="_on_Area_body_entered"]
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 
 [connection signal="body_entered" from="metarig/Area" to="." method="_on_Area_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
