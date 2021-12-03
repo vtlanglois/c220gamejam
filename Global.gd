@@ -22,8 +22,14 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+
+	if(carSpeed <= 0): 
+		GlobalAudioStreamPlayer.stop()
+		get_tree().change_scene("res://UI/EndScreen/EndScreen.tscn")
+
 	if(carSpeed <= 0): 
 		get_tree().change_scene("res://UI/EndScreen/EndScreen.tscn")
+
 
 func _unhandled_input(event):
 	if event.is_action_pressed("menu"):
