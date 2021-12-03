@@ -47,9 +47,6 @@ transform = Transform( 1, 1.67531e-05, 0.000143946, -5.29607e-05, 0.966837, 0.25
 current = true
 far = 76.2
 
-[node name="Menu" parent="." instance=ExtResource( 5 )]
-visible = false
-
 [node name="HUD" parent="." instance=ExtResource( 8 )]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -62,5 +59,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -150, 0 )
 wait_time = 0.25
 autostart = true
 script = ExtResource( 7 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 1.55952e-09, 2.73576e-09, -1.05658e-11, 1, -7.567e-10, 0, 3.49246e-10, 1, 6.06917e-05, 1.17351, 4.2492 )
+
+[node name="Menu" parent="." instance=ExtResource( 5 )]
+visible = false
 
 [connection signal="timeout" from="Spawner" to="Spawner" method="_on_Spawner_timeout"]

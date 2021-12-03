@@ -10,8 +10,11 @@ outline_size = 4
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
-[node name="EndScreen" type="Node2D"]
+[node name="EndScreen" type="Control"]
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 519.51, 315.645 )
@@ -25,7 +28,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="Control"]
+[node name="ColorRect" type="ColorRect" parent="."]
 margin_left = -4.0
 margin_top = 4.0
 margin_right = 1045.0
@@ -35,17 +38,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="Control"]
-margin_left = 362.581
-margin_top = 504.841
-margin_right = 645.581
-margin_bottom = 567.841
-text = "Try Again?"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="Control"]
+[node name="Label" type="Label" parent="."]
 margin_left = 188.497
 margin_top = 61.831
 margin_right = 752.497
@@ -58,7 +51,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Score" type="Label" parent="Control"]
+[node name="Score" type="Label" parent="."]
 margin_left = 186.119
 margin_top = 206.914
 margin_right = 750.119
@@ -73,4 +66,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="pressed" from="Control/Button" to="." method="_on_Button_pressed"]
+[node name="Button" type="Button" parent="."]
+margin_left = 362.581
+margin_top = 504.841
+margin_right = 645.581
+margin_bottom = 567.841
+text = "Try Again?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

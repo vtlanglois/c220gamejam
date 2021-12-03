@@ -33,6 +33,7 @@ __meta__ = {
 }
 
 [node name="Continue" type="Button" parent="."]
+pause_mode = 2
 margin_left = 412.0
 margin_top = 100.0
 margin_right = 612.0
@@ -44,6 +45,7 @@ __meta__ = {
 }
 
 [node name="Quit" type="Button" parent="."]
+pause_mode = 2
 margin_left = 412.0
 margin_top = 475.0
 margin_right = 612.0
@@ -55,5 +57,4 @@ __meta__ = {
 }
 
 [connection signal="pressed" from="Continue" to="." method="_on_Button_pressed"]
-[connection signal="pressed" from="Quit" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
