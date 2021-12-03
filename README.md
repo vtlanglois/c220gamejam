@@ -28,10 +28,10 @@ Assets, or resources used
 Maybe
 
 # Created by: Trolley & Friends
-Matthew Hammans - programmer
-Justin Foll - programmer
-Vincent Langlois - programmer
-Caleb Good - Model, texture, and 3D Artist
+Matthew Hammans - programmer  
+Justin Foll - programmer  
+Vincent Langlois - programmer  
+Caleb Good - Model, texture, and 3D Artist  
 
 ![image](https://user-images.githubusercontent.com/15847889/144534696-407ab4d5-33e0-4288-85b4-da1e95b005ed.png)
 
