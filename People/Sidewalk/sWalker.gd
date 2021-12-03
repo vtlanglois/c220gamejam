@@ -41,10 +41,11 @@ func _process(delta):
 
 func _on_Area_body_entered(body):
 	Global.carSpeed -= speedDecrease
+	Global.score += 1
 	Global.totalPeopleHit += 1
 	$AnimationPlayer.play("Fall")
 
 
 func _on_AnimationPlayer_animation_finished(Fall):
-	print("hihi")
+	print("death")
 	queue_free()
