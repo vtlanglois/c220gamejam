@@ -29,7 +29,7 @@ Maybe
 
 # Created by: Trolley & Friends
 Matthew Hammans - programmer
-Justin Toll - programmer
+Justin Foll - programmer
 Vincent Langlois - programmer
 Caleb Good - Model, texture, and 3D Artist
 
