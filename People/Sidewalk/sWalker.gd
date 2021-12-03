@@ -29,7 +29,7 @@ func _ready():
 
 func _process(delta):
 
-	angle += Global.carSpeed * delta * .025
+	angle += (Global.carSpeed+Global.constantSpeed) * delta * .025
 	
 	var angle_vector = Vector2(cos(angle), sin(angle))
 	global_transform.origin = rotation_target.global_transform.origin
@@ -43,6 +43,7 @@ func _on_Area_body_entered(body):
 	Global.carSpeed -= speedDecrease
 	Global.score += 1
 	Global.totalPeopleHit += 1
+	SoundFx.get_child(0).play()
 	$AnimationPlayer.play("Fall")
 
 
