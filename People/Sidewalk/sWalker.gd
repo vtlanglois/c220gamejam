@@ -16,6 +16,7 @@ onready var mesh : MeshInstance = get_node("metarig/Skeleton/Cube002")
 #rotation code: https://godotforums.org/discussion/27319/how-to-rotate-one-spatial-around-another-spatial
 
 func _ready():
+	$AnimationPlayer.play("Fall")
 	$AnimationPlayer.play("Walk")
 	if (skin <= 1):
 		mesh.get_surface_material(0).albedo_texture = s1
@@ -28,7 +29,7 @@ func _ready():
 
 func _process(delta):
 
-	angle += (Global.carSpeed+Global.constantSpeed) * delta * .025
+	angle += Global.carSpeed * delta * .025
 	
 	var angle_vector = Vector2(cos(angle), sin(angle))
 	global_transform.origin = rotation_target.global_transform.origin
@@ -37,10 +38,14 @@ func _process(delta):
 	global_transform.origin.z -= angle_vector.x * DISTANCE_FROM_TARGET
 	global_transform.origin.y += angle_vector.y * DISTANCE_FROM_TARGET
 
-	$AnimationPlayer.play("Walk")
 
 func _on_Area_body_entered(body):
 	Global.carSpeed -= speedDecrease
-	Global.totalPeopleHit += 1
 	Global.score += 1
+	Global.totalPeopleHit += 1
+	$AnimationPlayer.play("Fall")
+
+
+func _on_AnimationPlayer_animation_finished(Fall):
+	print("death")
 	queue_free()

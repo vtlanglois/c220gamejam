@@ -444,3 +444,4 @@ anims/Fall = SubResource( 5 )
 anims/Walk = SubResource( 6 )
 
 [connection signal="body_entered" from="metarig/Area" to="." method="_on_Area_body_entered"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
