@@ -33,6 +33,7 @@ margin_left = -4.0
 margin_top = 4.0
 margin_right = 1045.0
 margin_bottom = 631.0
+rect_rotation = -0.108498
 color = Color( 0, 0, 0, 0.662745 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -67,6 +68,7 @@ __meta__ = {
 }
 
 [node name="Button" type="Button" parent="."]
+visible = false
 margin_left = 362.581
 margin_top = 504.841
 margin_right = 645.581
