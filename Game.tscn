@@ -56,12 +56,11 @@ environment = SubResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -150, 0 )
 
 [node name="Spawner" type="Timer" parent="."]
-wait_time = 0.001
+wait_time = 0.25
 autostart = true
 script = ExtResource( 7 )
 
 [node name="Menu" parent="." instance=ExtResource( 5 )]
-pause_mode = 2
 visible = false
 
 [connection signal="timeout" from="Spawner" to="Spawner" method="_on_Spawner_timeout"]

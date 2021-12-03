@@ -3,6 +3,7 @@ extends Node
 
 
 export  var carSpeed = 20.0
+export var constantSpeed = 10.0
 export var score = 0;
 export var time = 0;
 export var carLimits = 3
