@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/8bit_Bossa.mp3-d161f4ea2a4ad7e8c3c81b28fcbd4563.mp3str"
+
+[deps]
+
+source_file="res://Assets/SFX/8bit_Bossa.mp3"
+dest_files=[ "res://.import/8bit_Bossa.mp3-d161f4ea2a4ad7e8c3c81b28fcbd4563.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

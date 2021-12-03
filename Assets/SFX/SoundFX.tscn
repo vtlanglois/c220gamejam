@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/SFX/lego-yoda-death-sound-effect.mp3" type="AudioStream" id=1]
+[ext_resource path="res://Assets/SFX/bing1.wav" type="AudioStream" id=2]
+
+[node name="SoundFX" type="Node"]
+
+[node name="Yoda" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+
+[node name="Wrench" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = 1.0

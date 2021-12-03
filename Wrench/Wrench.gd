@@ -25,4 +25,5 @@ func _on_Area_body_entered(body):
 	Global.carSpeed -= speedDecrease
 	Global.currentItems -= 1
 	Global.score += 5
+	SoundFx.get_child(1).play()
 	queue_free()

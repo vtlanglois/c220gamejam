@@ -23,6 +23,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if(carSpeed <= 0): 
+		SoundFx.get_child(0).stop()
+		SoundFx.get_child(1).stop()
 		get_tree().change_scene("res://UI/EndScreen/EndScreen.tscn")
 
 func _unhandled_input(event):
