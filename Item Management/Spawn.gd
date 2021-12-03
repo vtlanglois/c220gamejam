@@ -17,7 +17,9 @@ func _on_Spawner_timeout():
 	var position = Vector3(rng.randf_range(-4,5),-150.025,-150.025)
 	var scene_root = get_parent()
 	
+
 	if(sChance >= 40):
+
 		var node = sWalker.instance()
 		node.transform.origin = position
 		scene_root.add_child(node)

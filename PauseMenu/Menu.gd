@@ -1,8 +1,8 @@
 extends Control
 
 
-
 func _on_Button_pressed():
+	print("Button pressed")
 	get_tree().paused = false
 	hide()
 

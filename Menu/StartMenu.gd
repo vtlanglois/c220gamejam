@@ -14,7 +14,9 @@ func _ready():
 
 
 func _on_Button_pressed():
+	print("to game")
 	get_tree().change_scene("res://Game.tscn")
+	print("in game")
 
 
 func _on_Button2_pressed():

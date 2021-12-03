@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Guy/guy1.png" type="Texture" id=1]
+[ext_resource path="res://People/Sidewalk/sWalker.gd" type="Script" id=2]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "Cube002"
@@ -74,8 +75,9 @@ bind/16/pose = Transform( 4.22763, 0.0141703, -0.00944722, 0.0143333, -4.22699, 
 [sub_resource type="SpatialMaterial" id=3]
 albedo_texture = ExtResource( 1 )
 
-[sub_resource type="Animation" id=4]
-resource_name = "Fall"
+[sub_resource type="CapsuleShape" id=4]
+
+[sub_resource type="Animation" id=5]
 length = 0.5
 loop = true
 tracks/0/type = "transform"
@@ -198,8 +200,7 @@ tracks/16/imported = true
 tracks/16/enabled = true
 tracks/16/keys = PoolRealArray( 0.5, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=5]
-resource_name = "Walk"
+[sub_resource type="Animation" id=6]
 length = 0.9
 loop = true
 tracks/0/type = "transform"
@@ -322,7 +323,8 @@ tracks/16/imported = true
 tracks/16/enabled = true
 tracks/16/keys = PoolRealArray( 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1.66667, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1 )
 
-[node name="guy1" type="Spatial"]
+[node name="sWalker" type="Spatial"]
+script = ExtResource( 2 )
 
 [node name="metarig" type="Spatial" parent="."]
 transform = Transform( 0.236538, 0, 0, 0, 0.236538, 0, 0, 0, 0.236538, 0, 0, 0 )
@@ -419,6 +421,14 @@ mesh = SubResource( 1 )
 skin = SubResource( 2 )
 material/0 = SubResource( 3 )
 
+[node name="Area" type="Area" parent="metarig"]
+
+[node name="CollisionShape" type="CollisionShape" parent="metarig/Area"]
+transform = Transform( 0.621179, 0, 0, 0, -3.49223e-08, -0.798929, 0, 0.647927, -2.83218e-08, 0, 1.03966, 0 )
+shape = SubResource( 4 )
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Fall = SubResource( 4 )
-anims/Walk = SubResource( 5 )
+anims/Fall = SubResource( 5 )
+anims/Walk = SubResource( 6 )
+
+[connection signal="body_entered" from="metarig/Area" to="." method="_on_Area_body_entered"]
